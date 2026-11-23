@@ -1,0 +1,48 @@
+{
+  "patient_id": "p002",
+  "assessment_date": "2026-10-22",
+  "structured": {
+    "as_of": "2026-08-05",
+    "age": 84,
+    "diagnoses": ["Chronic heart failure", "Hyperlipidemia", "Chronic kidney disease stage 3"],
+    "medications": [
+      {"name": "Lisinopril", "dose": "20 mg daily"},
+      {"name": "Furosemide", "dose": "20 mg daily"},
+      {"name": "Atorvastatin", "dose": "40 mg nightly"}
+    ],
+    "prior_assessments": [
+      {"date": "2026-08-05", "field": "ambulation", "value": "INDEPENDENT"},
+      {"date": "2026-08-05", "field": "bathing", "value": "INDEPENDENT"}
+    ]
+  },
+  "notes": [
+    {
+      "note_id": "p002-n01",
+      "doc_type": "NURSING_VISIT",
+      "author_role": "RN",
+      "date": "2026-08-05",
+      "text": "FUNCTIONAL STATUS:\nPatient ambulates independently throughout the home without an assistive device. Showers independently.\n\nMEDICATIONS:\nLisinopril 20 mg daily, furosemide 20 mg daily, atorvastatin 40 mg nightly. Patient manages own medications."
+    },
+    {
+      "note_id": "p002-n02",
+      "doc_type": "DISCHARGE_SUMMARY",
+      "author_role": "MD",
+      "date": "2026-10-18",
+      "text": "HOSPITAL COURSE:\nAdmitted 10/12 for acute on chronic heart failure exacerbation. Diuresed with IV furosemide.\n\nDISCHARGE MEDICATIONS:\nFurosemide increased to 40 mg daily. Lisinopril discontinued due to acute kidney injury. Started metoprolol succinate 25 mg daily. Continue atorvastatin 40 mg nightly."
+    },
+    {
+      "note_id": "p002-n03",
+      "doc_type": "PT_EVALUATION",
+      "author_role": "PT",
+      "date": "2026-10-21",
+      "text": "FUNCTIONAL STATUS:\nAmbulation: Pt ambulates 50 ft with a rolling walker and contact guard assist from therapist; limited by dyspnea.\nBathing: Pt requires hands-on assistance of one person to step into the tub and to wash lower body.\nDressing: Pt dresses upper body independently; requires assistance to put on socks and shoes.\n\nASSESSMENT/PLAN:\nDeconditioned after hospitalization. PT 3x/week for strengthening and endurance."
+    },
+    {
+      "note_id": "p002-n04",
+      "doc_type": "NURSING_VISIT",
+      "author_role": "RN",
+      "date": "2026-10-22",
+      "text": "MEDICATIONS:\nWife now fills the weekly pillbox and reminds patient at each dose; patient takes the medications himself."
+    }
+  ]
+}

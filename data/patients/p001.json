@@ -1,0 +1,31 @@
+{
+  "patient_id": "p001",
+  "assessment_date": "2026-10-20",
+  "structured": {
+    "as_of": "2026-10-15",
+    "age": 78,
+    "diagnoses": ["Osteoarthritis of right knee", "Hypertension", "Status post right total knee arthroplasty on 2026-10-08"],
+    "medications": [
+      {"name": "Amlodipine", "dose": "5 mg daily"},
+      {"name": "Apixaban", "dose": "2.5 mg twice daily"},
+      {"name": "Acetaminophen", "dose": "650 mg every 6 hours as needed"}
+    ],
+    "prior_assessments": []
+  },
+  "notes": [
+    {
+      "note_id": "p001-n01",
+      "doc_type": "PT_EVALUATION",
+      "author_role": "PT",
+      "date": "2026-10-17",
+      "text": "HISTORY:\n78 y/o female s/p right TKA on 10/08.  Lives with daughter in a one-story home.\n\nFUNCTIONAL STATUS:\n- Ambulation: Pt ambulates 150 ft with a front-wheeled walker, no physical assistance required. Gait slow but steady.\n- Bathing: Pt showers seated on a shower chair. Daughter stands nearby for safety during showers; no hands-on assistance needed.\n- Transfers: Independent sit to stand using armrests.\n\nASSESSMENT/PLAN:\nContinue gait training 3x/week. Goal: ambulate with cane by discharge.\n\nElectronically signed by: PT, DPT"
+    },
+    {
+      "note_id": "p001-n02",
+      "doc_type": "NURSING_VISIT",
+      "author_role": "RN",
+      "date": "2026-10-19",
+      "text": "VITALS:\nBP 132/78, HR 72, afebrile.\n\nMEDICATIONS:\nReviewed medication list with patient. Patient fills her own weekly pillbox every Sunday and takes medications without reminders. Taking amlodipine 5 mg daily, apixaban 2.5 mg twice daily, and acetaminophen 650 mg as needed for knee pain.\n\nASSESSMENT/PLAN:\nIncision clean and dry. Reinforced fall precautions.\n\nElectronically signed by: RN"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "patient_id": "p003",
+  "assessment_date": "2026-10-25",
+  "structured": {
+    "as_of": "2026-10-20",
+    "age": 81,
+    "diagnoses": ["Mild Alzheimer's dementia", "Hypothyroidism", "Depression"],
+    "medications": [
+      {"name": "Donepezil", "dose": "10 mg nightly"},
+      {"name": "Sertraline", "dose": "50 mg daily"},
+      {"name": "Levothyroxine", "dose": "75 mcg daily"}
+    ],
+    "prior_assessments": []
+  },
+  "notes": [
+    {
+      "note_id": "p003-n01",
+      "doc_type": "NURSING_VISIT",
+      "author_role": "RN",
+      "date": "2026-10-24",
+      "text": "Patient seen at home for start of care. Patient states she manages all of her own medications and has never missed a dose. She walks around the apartment with a cane and no one helping her. She was pleasant and conversational. Vital signs stable."
+    },
+    {
+      "note_id": "p003-n02",
+      "doc_type": "SOCIAL_WORK",
+      "author_role": "MSW",
+      "date": "2026-10-24",
+      "text": "SOCIAL:\nLives with daughter, who is the primary caregiver. Daughter reports she administers all of the patient's medications each morning and evening because the patient often forgets doses. Daughter gives the patient a sponge bath twice weekly at the kitchen sink because the patient is afraid of the shower."
+    }
+  ]
+}
