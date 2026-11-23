@@ -1,0 +1,19 @@
+[
+  {"patient_id": "p001", "field_id": "bathing",               "status": "ANSWERED", "answer": "SUPERVISION", "evidence_note_ids": ["p001-n01"]},
+  {"patient_id": "p001", "field_id": "dressing",              "status": "INSUFFICIENT_EVIDENCE", "answer": null, "evidence_note_ids": []},
+  {"patient_id": "p001", "field_id": "ambulation",            "status": "ANSWERED", "answer": "INDEPENDENT", "evidence_note_ids": ["p001-n01"]},
+  {"patient_id": "p001", "field_id": "medication_management", "status": "ANSWERED", "answer": "INDEPENDENT", "evidence_note_ids": ["p001-n02"]},
+  {"patient_id": "p001", "field_id": "current_medications",   "status": "ANSWERED", "answer": ["amlodipine", "apixaban", "acetaminophen"], "evidence_note_ids": ["p001-n02"]},
+
+  {"patient_id": "p002", "field_id": "bathing",               "status": "ANSWERED", "answer": "PARTIAL_ASSIST", "evidence_note_ids": ["p002-n03"]},
+  {"patient_id": "p002", "field_id": "dressing",              "status": "ANSWERED", "answer": "PARTIAL_ASSIST", "evidence_note_ids": ["p002-n03"]},
+  {"patient_id": "p002", "field_id": "ambulation",            "status": "ANSWERED", "answer": "PARTIAL_ASSIST", "evidence_note_ids": ["p002-n03"]},
+  {"patient_id": "p002", "field_id": "medication_management", "status": "ANSWERED", "answer": "NEEDS_SETUP_OR_REMINDERS", "evidence_note_ids": ["p002-n04"]},
+  {"patient_id": "p002", "field_id": "current_medications",   "status": "ANSWERED", "answer": ["furosemide", "metoprolol", "atorvastatin"], "evidence_note_ids": ["p002-n02"]},
+
+  {"patient_id": "p003", "field_id": "bathing",               "status": "ANSWERED", "answer": "DEPENDENT", "evidence_note_ids": ["p003-n02"]},
+  {"patient_id": "p003", "field_id": "dressing",              "status": "INSUFFICIENT_EVIDENCE", "answer": null, "evidence_note_ids": []},
+  {"patient_id": "p003", "field_id": "ambulation",            "status": "ANSWERED", "answer": "INDEPENDENT", "evidence_note_ids": ["p003-n01"]},
+  {"patient_id": "p003", "field_id": "medication_management", "status": "CONFLICTING_EVIDENCE", "answer": null, "evidence_note_ids": ["p003-n01", "p003-n02"]},
+  {"patient_id": "p003", "field_id": "current_medications",   "status": "ANSWERED", "answer": ["donepezil", "sertraline", "levothyroxine"], "evidence_note_ids": ["p003-structured"]}
+]
