@@ -1,0 +1,172 @@
+{
+  "_note": "Recorded example outputs so the pipeline and evaluation run offline and deterministically. They were written by hand to reflect typical model behaviour for each prompt version, including its mistakes. Run with --predictor openai to evaluate a real model.",
+  "p001/bathing": {
+    "status": "ANSWERED",
+    "answer": "SUPERVISION",
+    "evidence": [
+      {
+        "chunk_id": "p001-n01-c01",
+        "quote": "Daughter stands nearby for safety during showers; no hands-on assistance needed"
+      }
+    ],
+    "rationale": "Daughter is present for safety during showers without hands-on help."
+  },
+  "p001/dressing": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": null,
+    "evidence": [],
+    "rationale": "No excerpt documents dressing; bathing supervision does not establish dressing ability."
+  },
+  "p001/ambulation": {
+    "status": "ANSWERED",
+    "answer": "INDEPENDENT",
+    "evidence": [
+      {
+        "chunk_id": "p001-n01-c01",
+        "quote": "Pt ambulates 150 ft with a front-wheeled walker, no physical assistance required"
+      }
+    ],
+    "rationale": "Walks with a walker and no physical assistance."
+  },
+  "p001/medication_management": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": null,
+    "evidence": [],
+    "rationale": "Excerpts list the medications but do not state who prepares or administers them."
+  },
+  "p001/current_medications": {
+    "status": "ANSWERED",
+    "answer": [
+      "Amlodipine",
+      "Apixaban",
+      "Acetaminophen"
+    ],
+    "evidence": [
+      {
+        "chunk_id": "p001-n02-c01",
+        "quote": "Taking amlodipine 5 mg daily, apixaban 2.5 mg twice daily, and acetaminophen 650 mg as needed"
+      }
+    ],
+    "rationale": "Medications confirmed at the nursing visit."
+  },
+  "p002/bathing": {
+    "status": "ANSWERED",
+    "answer": "PARTIAL_ASSIST",
+    "evidence": [
+      {
+        "chunk_id": "p002-n03-c00",
+        "quote": "Pt requires hands-on assistance of one person to step into the tub"
+      }
+    ],
+    "rationale": "Hands-on help for part of bathing."
+  },
+  "p002/dressing": {
+    "status": "ANSWERED",
+    "answer": "PARTIAL_ASSIST",
+    "evidence": [
+      {
+        "chunk_id": "p002-n03-c00",
+        "quote": "requires assistance to put on socks and shoes"
+      }
+    ],
+    "rationale": "Needs help with lower-body dressing."
+  },
+  "p002/ambulation": {
+    "status": "ANSWERED",
+    "answer": "PARTIAL_ASSIST",
+    "evidence": [
+      {
+        "chunk_id": "p002-n03-c00",
+        "quote": "Pt ambulates 50 ft with a rolling walker and contact guard assist from therapist"
+      }
+    ],
+    "rationale": "Most recent PT note (after hospitalization) documents contact guard assist; the August note is superseded."
+  },
+  "p002/medication_management": {
+    "status": "ANSWERED",
+    "answer": "NEEDS_SETUP_OR_REMINDERS",
+    "evidence": [
+      {
+        "chunk_id": "p002-n04-c00",
+        "quote": "Wife now fills the weekly pillbox and reminds patient at each dose"
+      }
+    ],
+    "rationale": "Wife sets up and reminds; patient takes them."
+  },
+  "p002/current_medications": {
+    "status": "ANSWERED",
+    "answer": [
+      "Furosemide",
+      "Metoprolol succinate",
+      "Atorvastatin"
+    ],
+    "evidence": [
+      {
+        "chunk_id": "p002-n02-c01",
+        "quote": "Furosemide increased to 40 mg daily"
+      },
+      {
+        "chunk_id": "p002-n02-c01",
+        "quote": "Started metoprolol succinate 25 mg daily"
+      },
+      {
+        "chunk_id": "p002-n02-c01",
+        "quote": "Continue atorvastatin 40 mg nightly"
+      }
+    ],
+    "rationale": "Discharge summary supersedes the August list; lisinopril was discontinued."
+  },
+  "p003/bathing": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": null,
+    "evidence": [],
+    "rationale": "Excerpts do not describe bathing or showering."
+  },
+  "p003/dressing": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": null,
+    "evidence": [],
+    "rationale": "Excerpts do not describe dressing."
+  },
+  "p003/ambulation": {
+    "status": "ANSWERED",
+    "answer": "INDEPENDENT",
+    "evidence": [
+      {
+        "chunk_id": "p003-n01-c02",
+        "quote": "She walks around the apartment with a cane and no one helping her"
+      }
+    ],
+    "rationale": "Walks with a cane without assistance."
+  },
+  "p003/medication_management": {
+    "status": "CONFLICTING_EVIDENCE",
+    "answer": null,
+    "evidence": [
+      {
+        "chunk_id": "p003-n01-c01",
+        "quote": "Patient states she manages all of her own medications"
+      },
+      {
+        "chunk_id": "p003-n02-c00",
+        "quote": "Daughter reports she administers all of the patient's medications each morning and evening"
+      }
+    ],
+    "rationale": "Patient and daughter give incompatible accounts on the same day."
+  },
+  "p003/current_medications": {
+    "status": "ANSWERED",
+    "answer": [
+      "Donepezil",
+      "Sertraline",
+      "Levothyroxine"
+    ],
+    "evidence": [
+      {
+        "chunk_id": "p003-structured-c01",
+        "quote": "Donepezil 10 mg nightly; Sertraline 50 mg daily; Levothyroxine 75 mcg daily"
+      }
+    ],
+    "rationale": "From the current medication list."
+  }
+}
