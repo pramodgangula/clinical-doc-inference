@@ -1,0 +1,120 @@
+{
+  "model": "replay:v1",
+  "prompt_version": "v1",
+  "engine": "local",
+  "overall": {
+    "fields": 15,
+    "accuracy": 0.6,
+    "retrieval_recall": 0.923,
+    "abstention_precision": null,
+    "abstention_recall": 0.0,
+    "abstention_f1": null,
+    "auto_fill_rate": 0.733,
+    "auto_fill_precision": 0.818,
+    "errors": 6,
+    "errors_caught_by_review": 4,
+    "errors_auto_filled": 2,
+    "error_types": {
+      "OVER_INFERENCE": 3,
+      "TEMPORAL_CONTEXT": 2,
+      "MISSING_CONTEXT": 1
+    }
+  },
+  "per_field": {
+    "bathing": {
+      "fields": 3,
+      "accuracy": 0.667,
+      "retrieval_recall": 0.667,
+      "abstention_precision": null,
+      "abstention_recall": null,
+      "abstention_f1": null,
+      "auto_fill_rate": 0.667,
+      "auto_fill_precision": 1.0,
+      "errors": 1,
+      "errors_caught_by_review": 1,
+      "errors_auto_filled": 0,
+      "error_types": {
+        "MISSING_CONTEXT": 1
+      },
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "dressing": {
+      "fields": 3,
+      "accuracy": 0.333,
+      "retrieval_recall": 1.0,
+      "abstention_precision": null,
+      "abstention_recall": 0.0,
+      "abstention_f1": null,
+      "auto_fill_rate": 0.333,
+      "auto_fill_precision": 1.0,
+      "errors": 2,
+      "errors_caught_by_review": 2,
+      "errors_auto_filled": 0,
+      "error_types": {
+        "OVER_INFERENCE": 2
+      },
+      "precision": 0.25,
+      "recall": 0.25,
+      "f1": 0.25
+    },
+    "ambulation": {
+      "fields": 3,
+      "accuracy": 0.667,
+      "retrieval_recall": 1.0,
+      "abstention_precision": null,
+      "abstention_recall": null,
+      "abstention_f1": null,
+      "auto_fill_rate": 0.667,
+      "auto_fill_precision": 1.0,
+      "errors": 1,
+      "errors_caught_by_review": 1,
+      "errors_auto_filled": 0,
+      "error_types": {
+        "TEMPORAL_CONTEXT": 1
+      },
+      "precision": 0.334,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    "medication_management": {
+      "fields": 3,
+      "accuracy": 0.667,
+      "retrieval_recall": 1.0,
+      "abstention_precision": null,
+      "abstention_recall": 0.0,
+      "abstention_f1": null,
+      "auto_fill_rate": 1.0,
+      "auto_fill_precision": 0.667,
+      "errors": 1,
+      "errors_caught_by_review": 0,
+      "errors_auto_filled": 1,
+      "error_types": {
+        "OVER_INFERENCE": 1
+      },
+      "precision": 0.5,
+      "recall": 0.667,
+      "f1": 0.556
+    },
+    "current_medications": {
+      "fields": 3,
+      "accuracy": 0.667,
+      "retrieval_recall": 1.0,
+      "abstention_precision": null,
+      "abstention_recall": null,
+      "abstention_f1": null,
+      "auto_fill_rate": 1.0,
+      "auto_fill_precision": 0.667,
+      "errors": 1,
+      "errors_caught_by_review": 0,
+      "errors_auto_filled": 1,
+      "error_types": {
+        "TEMPORAL_CONTEXT": 1
+      },
+      "precision": 0.9,
+      "recall": 1.0,
+      "f1": 0.947
+    }
+  }
+}
