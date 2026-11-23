@@ -1,0 +1,84 @@
+# Documentation fields the pipeline answers.
+#
+# NOTE: simplified, illustrative fields inspired by home health functional
+# assessments. They are not an official assessment instrument.
+#
+#   answer_type          categorical (one allowed value) or list (extracted items)
+#   sections             metadata filter: only chunks from these sections are retrieved
+#   lookback_days        metadata filter: ignore documents older than this before the assessment date
+#   require_topic_evidence  evidence quotes must mention the field's topic (guards against over-inference)
+#   keywords             lay + clinical terms; used for keyword retrieval and validation sweeps
+
+fields:
+  bathing:
+    question: What is the patient's current ability to bathe or shower, including getting in and out of the tub or shower?
+    answer_type: categorical
+    allowed_values: [INDEPENDENT, SUPERVISION, PARTIAL_ASSIST, DEPENDENT]
+    guidance: |
+      - SUPERVISION: another person is present for safety or cueing, with no hands-on help.
+      - PARTIAL_ASSIST: another person gives hands-on help for part of the task.
+      - DEPENDENT: another person performs all or nearly all of the task.
+    sections: [FUNCTIONAL_STATUS, ASSESSMENT_PLAN, GENERAL]
+    lookback_days: 120
+    require_topic_evidence: true
+    keywords: [bath, bathe, bathing, shower, showers, tub, wash, sponge bath]
+
+  dressing:
+    question: What is the patient's current ability to dress upper and lower body, including footwear?
+    answer_type: categorical
+    allowed_values: [INDEPENDENT, SUPERVISION, PARTIAL_ASSIST, DEPENDENT]
+    guidance: |
+      - Score from documentation about dressing only. Do not infer it from bathing, walking or other activities.
+      - Needing help with any part (for example socks and shoes) is PARTIAL_ASSIST.
+    sections: [FUNCTIONAL_STATUS, ASSESSMENT_PLAN, GENERAL]
+    lookback_days: 120
+    require_topic_evidence: true
+    keywords: [dress, dresses, dressing, clothes, clothing, shirt, pants, socks, shoes, button]
+
+  ambulation:
+    question: What is the patient's current ability to walk inside the home?
+    answer_type: categorical
+    allowed_values: [INDEPENDENT, SUPERVISION, PARTIAL_ASSIST, DEPENDENT]
+    guidance: |
+      - Using a device (cane, walker) alone does not lower the score.
+      - Contact guard or any hands-on help is PARTIAL_ASSIST.
+    sections: [FUNCTIONAL_STATUS, PRIOR_ASSESSMENT, ASSESSMENT_PLAN, GENERAL]
+    lookback_days: 120
+    require_topic_evidence: true
+    keywords: [ambulate, ambulates, ambulation, walk, walks, walking, walker, cane, gait]
+
+  medication_management:
+    question: How does the patient currently manage oral medications?
+    answer_type: categorical
+    allowed_values: [INDEPENDENT, NEEDS_SETUP_OR_REMINDERS, NEEDS_ADMINISTRATION]
+    guidance: |
+      - NEEDS_SETUP_OR_REMINDERS: someone fills a pillbox or reminds; the patient takes the medications.
+      - NEEDS_ADMINISTRATION: someone must give the patient each dose.
+    sections: [MEDICATIONS, SOCIAL, ASSESSMENT_PLAN, GENERAL]
+    lookback_days: 120
+    require_topic_evidence: true
+    keywords: [medication, medications, pillbox, dose, doses, administer, administers, reminds, pills]
+
+  current_medications:
+    question: Which oral medications is the patient currently taking? List generic drug names only.
+    answer_type: list
+    guidance: |
+      - Include only medications that are current as of the assessment date.
+      - Exclude medications documented as discontinued or stopped.
+    sections: [MEDICATIONS]
+    lookback_days: 120
+    require_topic_evidence: false
+    keywords: [medication, medications, mg, mcg, daily, nightly, started, discontinued, continue]
+
+# Cross-field rules: if both conditions hold, both fields go to clinician review.
+consistency_rules:
+  - name: walks_dependent_but_bathes_independent
+    when: {field: ambulation, answer: DEPENDENT}
+    and:  {field: bathing, answer: INDEPENDENT}
+  - name: bathes_independent_but_dresses_dependent
+    when: {field: bathing, answer: INDEPENDENT}
+    and:  {field: dressing, answer: DEPENDENT}
+
+retrieval:
+  top_k: 4
+  stale_evidence_tolerance_days: 14
